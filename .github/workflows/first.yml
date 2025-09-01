@@ -23,4 +23,6 @@ jobs:
       - name: step one
         uses: actions/checkout@v2
       - name: step two
-        run: "Get-ChildItem Env: | Sort-Object Name"
+        run: | 
+          "Get-ChildItem Env: | Sort-Object Name"
+          "the MY_ACCOUNT is : {{ env.MY_ACCOUNT }}"
