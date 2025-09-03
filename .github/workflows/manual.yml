@@ -1,0 +1,27 @@
+on:
+  workflow_dispatch:
+    inputs:
+      service-name:
+        description: 'A service name'
+        required: true
+        default: "abc"
+        type: string
+
+jobs:
+  ABC:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print service name
+        run: 
+          echo "Service name is ${{ github.event.inputs.service-name }}"
+  XYZ:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print service name
+        run: echo "Service name is ${{ github.event.inputs.service-name }}"
