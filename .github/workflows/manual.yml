@@ -10,7 +10,7 @@ on:
 jobs:
   ABC:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.service-name }} == "abc"
+    if: ${{ github.event.inputs.service-name == 'abc' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
           echo "Service name is ${{ github.event.inputs.service-name }}"
   XYZ:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.service-name }} == "xyz"
+    if: ${{ github.event.inputs.service-name  == 'xyz' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
